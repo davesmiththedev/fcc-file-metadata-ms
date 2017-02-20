@@ -16,7 +16,8 @@ module.exports = (app)=>{
     });
     
     app.get('/', (req, res)=>{
-        res.status(200).send('Hello');
+        let homePage = path.resolve(__dirname, '../../views/home.html');
+        res.status(200).sendFile(homePage);
     });
     
     app.use((req, res)=>{
